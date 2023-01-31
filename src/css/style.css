@@ -12,6 +12,7 @@ body {
 }
 
 button {
+  min-width: 40px;
   background-color: #fdfdfd;
   color: #102f5e;
   border: 2px solid #102f5e;
@@ -24,12 +25,16 @@ button {
   transition: 0.4s;
 }
 
-button:hover {
+button:disabled {
+  border: 2px solid #333;
+}
+
+button:hover:not([disabled]) {
   background-color: #102f5e;
   color: #fff;
 }
 
-button:hover > i {
+button:hover:not([disabled]) > i {
   color: #fff;
 }
 
@@ -37,6 +42,10 @@ button i {
   color: #102f5e;
   font-weight: bold;
   pointer-events: none;
+}
+
+button:disabled i {
+  color: #333;
 }
 
 .remove-todo:hover {
